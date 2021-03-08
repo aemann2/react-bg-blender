@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Lato:wght@100;300;400&display=swap');
+
+// Variables //
+
+$header-bg: #00308d;
+$btn-bg: #ffcc17;
+$picker-bg: rgb(207, 207, 207);
+$main-font-color: #061940;
+$header-font-color: white;
+
+:root {
+  --color: transparent;
+  --blend-mode: hard-light;
+}
+
+// Globals //
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+  color: $header-font-color;
+  font-size: 5rem;
+}
+
+label {
+  font-size: 5rem;
+  font-weight: 300;
+}
+
+input[type='color'] {
+  background-color: $picker-bg;
+  border-radius: 10px;
+  border: none;
+  padding: 0.5rem;
+  width: 15rem;
+}
+
+select {
+  font-family: 'Lato', sans-serif;
+  font-size: 2rem;
+  text-transform: lowercase;
+  text-indent: 1em;
+  width: 7em;
+  appearance: none;
+  border: 2px solid black;
+  background-image: url('../images/arrow.svg');
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+input:hover,
+select:hover,
+button:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(70%);
+}
+
+// Main styles //
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: $header-bg;
+  padding: 3rem;
+
+  &__heading {
+    width: 5em;
+    line-height: 1em;
+    margin-left: 1rem;
+    align-self: center;
+  }
+
+  &__img {
+    width: 140px;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  color: $main-font-color;
+}
+
+.img {
+  margin: 3rem 3rem 0 1rem;
+  width: 60vh;
+  height: 60vh;
+
+  &__container {
+    height: inherit;
+    width: inherit;
+    background-color: var(--color);
+    background-blend-mode: var(--blend-mode);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__spinner {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    // fix for Safari
+    display: none;
+  }
+}
+
+.selectors {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+
+  &__picker,
+  &__blend-mode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__new-pic {
+    background-color: $btn-bg;
+    font-size: 4rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border: 5px solid black;
+    transition: filter 0.2s;
+  }
+}
+
+// Media Queries //
+
+@import 'media';
