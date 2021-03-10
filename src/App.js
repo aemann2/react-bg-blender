@@ -11,6 +11,11 @@ function App() {
       <main>
         <Photo />
       </main>
+      <div className='selectors__blend-mode'>
+        <button className='selectors__new-pic' id='new-pic'>
+          New Photo
+        </button>
+      </div>
     </div>
   );
 }
