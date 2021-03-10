@@ -6,15 +6,17 @@ import Photobtn from './components/Photobtn';
 
 function App() {
   const [photo, setPhoto] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const fetchPhoto = () => {
     const url = 'https://picsum.photos/800?grayscale';
-
+    setLoading(true);
     fetch(url)
       .then((response) => response.blob())
       .then((data) => {
         const imgURL = URL.createObjectURL(data);
         setPhoto(imgURL);
+        setLoading(false);
       });
   };
 
@@ -24,10 +26,10 @@ function App() {
         <Header />
       </header>
       <main>
-        <Photo fetchPhoto={fetchPhoto} photo={photo} />
+        <Photo fetchPhoto={fetchPhoto} photo={photo} loading={loading} />
       </main>
       <div className='selectors__blend-mode'>
-        <Photobtn fetchPhoto={fetchPhoto} photo={photo} />
+        <Photobtn fetchPhoto={fetchPhoto} />
       </div>
     </div>
   );
