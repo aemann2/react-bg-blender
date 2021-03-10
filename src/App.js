@@ -6,12 +6,15 @@ import ColorPicker from './components/ColorPicker';
 import Photobtn from './components/Photobtn';
 
 function App() {
+  // state lifted up from Photo and Photobtn components
   const [photo, setPhoto] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const fetchPhoto = () => {
     const url = 'https://picsum.photos/800?grayscale';
     setLoading(true);
+    document.documentElement.style.setProperty('--color', 'transparent');
+
     fetch(url)
       .then((response) => response.blob())
       .then((data) => {

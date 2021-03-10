@@ -16,7 +16,7 @@ function ColorPicker() {
         className='selectors__picker__bar'
         id='color-picker'
         name='color-picker'
-        value='#ff0000'
+        value={color ? color : '#ff0000'}
         onChange={handleChange}
       />
     </div>
