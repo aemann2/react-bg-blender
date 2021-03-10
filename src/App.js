@@ -1,20 +1,33 @@
 import './style/style.css';
+import { useState } from 'react';
 import Header from './components/Header';
 import Photo from './components/Photo';
+import Photobtn from './components/Photobtn';
 
 function App() {
+  const [photo, setPhoto] = useState(null);
+
+  const fetchPhoto = () => {
+    const url = 'https://picsum.photos/800?grayscale';
+
+    fetch(url)
+      .then((response) => response.blob())
+      .then((data) => {
+        const imgURL = URL.createObjectURL(data);
+        setPhoto(imgURL);
+      });
+  };
+
   return (
     <div>
       <header>
         <Header />
       </header>
       <main>
-        <Photo />
+        <Photo fetchPhoto={fetchPhoto} photo={photo} />
       </main>
       <div className='selectors__blend-mode'>
-        <button className='selectors__new-pic' id='new-pic'>
-          New Photo
-        </button>
+        <Photobtn fetchPhoto={fetchPhoto} photo={photo} />
       </div>
     </div>
   );

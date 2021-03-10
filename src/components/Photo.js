@@ -1,22 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import spinner from '../images/spinner.svg';
 
-function Photo() {
-  const [photo, setPhoto] = useState(null);
-
-  const fetchPhoto = () => {
-    const url = 'https://picsum.photos/800?grayscale';
-
-    fetch(url)
-      .then((response) => response.blob())
-      .then((data) => {
-        const imgURL = URL.createObjectURL(data);
-        setPhoto(imgURL);
-      });
-  };
-
+function Photo(props) {
   useEffect(() => {
-    fetchPhoto();
+    props.fetchPhoto();
   }, []);
 
   return (
@@ -24,7 +11,9 @@ function Photo() {
       <div
         className='img__container'
         style={{
-          backgroundImage: photo ? `url(${photo})` : `url(${spinner})`,
+          backgroundImage: props.photo
+            ? `url(${props.photo})`
+            : `url(${spinner})`,
         }}
       ></div>
     </div>
