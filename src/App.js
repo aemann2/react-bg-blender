@@ -2,6 +2,7 @@ import './style/style.css';
 import { useState } from 'react';
 import Header from './components/Header';
 import Photo from './components/Photo';
+import ColorPicker from './components/ColorPicker';
 import Photobtn from './components/Photobtn';
 
 function App() {
@@ -25,12 +26,13 @@ function App() {
       <header>
         <Header />
       </header>
-      <main>
+      <main className='main'>
         <Photo fetchPhoto={fetchPhoto} photo={photo} loading={loading} />
+        <div className='selectors'>
+          <ColorPicker />
+          <Photobtn fetchPhoto={fetchPhoto} />
+        </div>
       </main>
-      <div className='selectors__blend-mode'>
-        <Photobtn fetchPhoto={fetchPhoto} />
-      </div>
     </div>
   );
 }
