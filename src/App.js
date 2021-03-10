@@ -4,12 +4,14 @@ import Header from './components/Header';
 import Photo from './components/Photo';
 import ColorPicker from './components/ColorPicker';
 import Photobtn from './components/Photobtn';
+import BlendMode from './components/BlendMode';
 
 function App() {
   // state lifted up from Photo and Photobtn components
   const [photo, setPhoto] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // function to be passed as a prop to child components
   const fetchPhoto = () => {
     const url = 'https://picsum.photos/800?grayscale';
     setLoading(true);
@@ -33,6 +35,7 @@ function App() {
         <Photo fetchPhoto={fetchPhoto} photo={photo} loading={loading} />
         <div className='selectors'>
           <ColorPicker />
+          <BlendMode />
           <Photobtn fetchPhoto={fetchPhoto} />
         </div>
       </main>
