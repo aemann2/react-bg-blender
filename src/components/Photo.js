@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import spinner from '../images/spinner.svg';
 
-function Photo(props) {
-  const { fetchPhoto, loading, photo } = props;
+function Photo({ fetchPhoto, loading, photo }) {
   // I can't figure out the error in the next line...
   // eslint-disable-next-line
   useEffect(fetchPhoto, []);
