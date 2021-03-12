@@ -1,4 +1,4 @@
-# [Background Blender](https://background-blender.netlify.app/)
+# [Background Blender](https://react-background-blender.netlify.app)
 
 **Background Blender** is a background blend mode sandbox. It pulls random photos from the [Lorem Picsum](https://picsum.photos/) API and blends them with a specified color. Users can choose which background blend mode to apply to the photo.
 
