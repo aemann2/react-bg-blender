@@ -51,6 +51,11 @@
 
   .header {
     padding: 1em 3rem 4rem 3rem;
+
+    &--wrapper {
+      position: relative;
+    }
+
     &__heading {
       width: 5em;
     }
@@ -58,8 +63,8 @@
     &__img {
       position: absolute;
       width: 5em;
-      top: 5rem;
-      left: 4rem;
+      top: 4rem;
+      left: 1rem;
     }
 
     &--indent {
