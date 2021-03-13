@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Photobtn({ fetchPhoto }) {
   const handleClick = () => {
@@ -13,5 +14,9 @@ function Photobtn({ fetchPhoto }) {
     </React.Fragment>
   );
 }
+
+Photobtn.propTypes = {
+  fetchPhoto: PropTypes.func,
+};
 
 export default Photobtn;
