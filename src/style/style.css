@@ -75,6 +75,12 @@ button:hover {
   padding: 3rem;
 }
 
+.header--wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .header__heading {
   width: 5em;
   line-height: 1em;
@@ -216,14 +222,17 @@ button:hover {
   .header {
     padding: 1em 3rem 4rem 3rem;
   }
+  .header--wrapper {
+    position: relative;
+  }
   .header__heading {
     width: 5em;
   }
   .header__img {
     position: absolute;
     width: 5em;
-    top: 5rem;
-    left: 4rem;
+    top: 4rem;
+    left: 1rem;
   }
   .header--indent {
     display: inline-block;

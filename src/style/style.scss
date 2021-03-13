@@ -79,6 +79,10 @@ button:hover {
   background-color: $header-bg;
   padding: 3rem;
 
+  &--wrapper {
+    display: flex;
+  }
+
   &__heading {
     width: 5em;
     line-height: 1em;
