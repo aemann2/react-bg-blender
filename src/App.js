@@ -18,12 +18,19 @@ function App() {
     document.documentElement.style.setProperty('--color', 'transparent');
 
     fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        return response;
+      })
       .then((response) => response.blob())
       .then((data) => {
         const imgURL = URL.createObjectURL(data);
         setPhoto(imgURL);
         setLoading(false);
-      });
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
