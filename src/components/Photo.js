@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import spinner from '../images/spinner.svg';
 
 function Photo({ fetchPhoto, loading, photo }) {
@@ -17,5 +18,11 @@ function Photo({ fetchPhoto, loading, photo }) {
     </div>
   );
 }
+
+Photo.propTypes = {
+  fetchPhoto: PropTypes.func,
+  loading: PropTypes.bool,
+  photo: PropTypes.string,
+};
 
 export default Photo;
